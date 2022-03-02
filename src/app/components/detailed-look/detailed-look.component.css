@@ -1,0 +1,191 @@
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.ratingStar{
+  width: 45px;
+  height: 40px;
+
+  border: none;
+
+  transition: all 0.3s ease-in;
+
+  background-image: url("../../../assets/nowe-logo-nba-75-greyscale.png");
+}
+
+
+.avgRatingStar {
+  width: 45px;
+  height: 40px;
+  background-image: url("../../../assets/nowe-logo-nba-75-greyscale.png");
+}
+
+#avgRatingDiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.dishImg{
+  width: auto;
+  height: 30%;
+
+  margin: 2%;
+
+  box-shadow: 0.3rem 0.3rem 0.3rem gray;
+}
+
+
+.descr, .dishImages {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1%;
+  align-content: space-evenly;
+  align-items: flex-start;
+}
+
+.dishImages{
+  width: 40vw;
+  height: 90vh;
+}
+
+.descr {
+  font-size: 1.75vw;
+}
+
+.dish{
+  width: 80%;
+  height: 80%;
+
+  margin: 1%;
+  padding: 3%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 5%;
+  align-content: space-around;
+  align-items: flex-start;
+
+  background-color: white;
+
+  flex-grow: 4;
+  flex-shrink: 4;
+
+  box-shadow: 0.5rem 0.5rem 0.5rem black;
+}
+
+.characteristics{
+  margin: 0;
+  padding: 0;
+
+  font-size: 1.75vw;
+}
+
+.buttons {
+  margin: 1%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#avgRatingDiv{
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.activeRating{
+  margin: 1%;
+}
+
+#rateButton {
+  margin: 1%;
+  padding: 2%;
+  font-size: 1.75vw;
+  font-weight: bolder;
+
+  border-radius: 3vw;
+  border: none;
+
+  background-color: #0034FC;
+  color: white;
+}
+
+.plus, .minus {
+  margin: 1%;
+
+  font-size: 1.75vw;
+  font-weight: bolder;
+
+  border-radius: 50%;
+  border: none;
+
+  color: white;
+}
+
+.plus {
+  padding: 6px 12px;
+  background-color: forestgreen;
+}
+
+.minus {
+  padding: 6px 16px;
+  background-color: #E30700;
+}
+
+.returnBtn {
+  width: 20vw;
+  height: 8vh;
+
+  margin: 3%;
+  padding: 1%;
+
+  font-size: 1.75vw;
+  font-weight: bolder;
+
+  border: 0.3vw solid black;
+  border-radius: 3vw;
+
+  background-color: orange;
+}
+
+
+.reviews, .singleReview {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-evenly;
+  align-items: flex-start;
+}
+
+.singleReview {
+  margin: 3% 0;
+}
+
+.reviews{
+  height: 23vh;
+  overflow: scroll;
+}
+
+li {
+  margin-top: 1%;
+}
+
+.ratingStar:hover{
+  z-index: 1;
+  box-shadow: none;
+  transform: none;
+}

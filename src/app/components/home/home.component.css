@@ -1,0 +1,79 @@
+img {
+  width: 30%;
+  height: auto;
+
+  margin: 2%;
+}
+
+#fb, #ig {
+  width: 16%;
+  height: 16%;
+}
+
+.socialLogo {
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wrapper {
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 5%;
+  align-content: space-around;
+  align-items: center;
+
+  padding: 2%;
+  /*background-color: gainsboro;*/
+  background-color: transparent;
+  /*box-shadow: 0.3rem 0.3rem 0.3rem black;*/
+}
+
+#descr, #contact, #placeholderMaybeMap {
+  padding: 2%;
+  margin: 2%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+
+  box-shadow: 0.5rem 0.5rem 0.5rem black;
+}
+
+#descr {
+  font-size: 1.2vw;
+  background-color: #0034FC;
+  color: white;
+}
+
+#contact {
+  font-size: 1.7vw;
+  background-color: white;
+  color: black;
+}
+
+#placeholderMaybeMap {
+  font-size: 1.2vw;
+  background-color: #E30700;
+  color: white;
+}
+
+
+.outerCover {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+}
+

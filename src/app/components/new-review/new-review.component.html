@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <p>Add new review:</p>
+<form [formGroup]="addingReviewForm">
+
+  <div id="nickname">
+  <label>Nickname:</label>
+  <input name="nickname" formControlName="nickname">
+  </div>
+
+  <div id="reviewName">
+  <label>Review name:</label>
+  <input name="reviewName" type="text" formControlName="reviewName">
+  </div>
+
+  <div id="reviewText">
+  <label>Review text:</label>
+  <input name="reviewText" formControlName="reviewText">
+  </div>
+
+  <div id="dateOfOrder">
+  <label>Date of order:</label>
+  <input name="dateOfOrder" formControlName="dateOfOrder" type="date">
+  </div>
+
+  <div class="errorsTable">
+    <span *ngIf="formErrors.nickname">{{formErrors.nickname}}</span>
+    <span *ngIf="formErrors.reviewName">{{formErrors.reviewName}}</span>
+    <span *ngIf="formErrors.reviewText">{{formErrors.reviewText}}</span>
+    <span *ngIf="formErrors.dateOfOrder">{{formErrors.dateOfOrder}}</span>
+  </div>
+
+  <button type="submit"
+          [ngStyle]="{backgroundColor: !addingReviewForm.valid ? 'grey':'rebeccapurple'}"
+          [disabled]="!addingReviewForm.valid" (click)="onSubmit(addingReviewForm)">Add review!</button>
+</form>
+</div>

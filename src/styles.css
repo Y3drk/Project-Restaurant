@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+
+body {
+  background-color: black;
+  background-image: url("src/assets/iceColdSteph.jpg");
+  object-fit: fill;
+  font-family:  'Yanone Kaffeesatz', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+button:hover{
+  z-index: 8;
+  transform: scale(1.15);
+  box-shadow: 0.15rem 0.15rem 0.15rem grey;
+}

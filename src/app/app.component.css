@@ -1,0 +1,75 @@
+
+h1 {
+  font-size: 2.5vw;
+  font-weight: bold;
+  text-align: center;
+
+  background-image: linear-gradient(to right,#0034FC,#E30700);
+  color: white;
+
+  padding: 1%;
+  border-radius: 3vw;
+  border: 0.3vw solid white;
+  box-shadow: 0.2rem 0.2rem 0.2rem black;
+}
+
+#all {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1%;
+  align-items: center;
+  align-content: space-between;
+
+}
+
+nav {
+  position: sticky;
+  top: 0;
+
+}
+
+ul {
+  width: 45rem;
+  padding: 1%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+
+  border: 0.3vw solid gold;
+  border-radius: 3vw;
+
+  background-color: gold;
+  box-shadow: 0.15rem 0.15rem 0.15rem black;
+}
+
+.menuButton {
+  background-color: white;
+  color: black;
+
+  font-weight: bolder;
+
+  border-radius: 3vw;
+  border: none;
+
+  cursor: pointer;
+}
+
+.menuNickname{
+  color: black;
+  background-color: transparent;
+
+  font-weight: bold;
+
+  border-radius: 3vw;
+  border: none;
+}
+
+.menuNickname:hover{
+  transform: none;
+  box-shadow: none;
+  z-index: 1;
+}
+

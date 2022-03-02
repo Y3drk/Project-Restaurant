@@ -1,0 +1,129 @@
+<div class="wrapper">
+  <div class="dish">
+    <div class="dishImages">
+      <img class="dishImg"
+           src="{{getDish().mainPhotoLink}}"
+           alt="great photo">
+      <img class="dishImg"
+           src="{{getDish().secondPhotoLink}}"
+           alt="great photo 2">
+      <img class="dishImg"
+           src="{{getDish().thirdPhotoLink}}"
+           alt="great photo 3">
+    </div>
+    <div class="descr">
+
+      <h3>{{spectatedDish.name | uppercase}}</h3>
+      <ul class="characteristics">
+        <li>cuisine: {{spectatedDish.cuisineType | uppercase}}</li>
+
+        <li>category: {{spectatedDish.dishCategory}}</li>
+
+        <li>ingredients: {{spectatedDish.ingredients}}</li>
+
+        <li *ngIf="getCurrency() === 'USD'">price: {{spectatedDish.priceUSD}}$</li>
+
+        <li *ngIf="getCurrency() === 'EUR'">price: {{spectatedDish.priceEUR}}€</li>
+
+        <li *ngIf="amounts[spectatedDishInd].amount > 0; else noDish"
+            [ngStyle]="{color: amounts[spectatedDishInd].amount < 6 ? 'red':'black'}"
+        >in Stock: {{amounts[spectatedDishInd].amount}}</li>
+        <ng-template #noDish>
+          <li [ngStyle]="{color: 'red'}">Product is unavailable!</li>
+        </ng-template>
+      </ul>
+      <div class="buttons">
+        <button type="button" class="plus"
+                [hidden]="amounts[spectatedDishInd].amount === 0"
+                id="{{spectatedDish.name}}" (click)="reduceStockAddtoChosen($event)"
+        >+</button>
+
+        <button type="button" class="minus"
+                [hidden]="amounts[spectatedDishInd].amount === originalAmounts[spectatedDishInd].ogAmount"
+                id="{{spectatedDish.iden}}" (click)="increaseStockDeletefromChosen($event)"
+        >-</button>
+      </div>
+
+      <p>{{spectatedDish.dishDescription}}</p>
+      <div id="avgRatingDiv">Rating:
+        <div class="avgRatingStar" id="{{spectatedDish.name}}avgStar1"
+             [ngStyle]="{backgroundImage: ifStarEarned(1,spectatedDish.name)? 'url(../../../assets/nowe-logo-nba-75.png)':'url(../../../assets/nowe-logo-nba-75-greyscale.png)'}"
+        ></div>
+        <div class="avgRatingStar" id="{{spectatedDish.name}}avgStar2"
+             [ngStyle]="{backgroundImage: ifStarEarned(2,spectatedDish.name)? 'url(../../../assets/nowe-logo-nba-75.png)':'url(../../../assets/nowe-logo-nba-75-greyscale.png)'}"
+        ></div>
+        <div class="avgRatingStar" id="{{spectatedDish.name}}avgStar3"
+             [ngStyle]="{backgroundImage: ifStarEarned(3,spectatedDish.name)? 'url(../../../assets/nowe-logo-nba-75.png)':'url(../../../assets/nowe-logo-nba-75-greyscale.png)'}"
+        ></div>
+        <div class="avgRatingStar" id="{{spectatedDish.name}}avgStar4"
+             [ngStyle]="{backgroundImage: ifStarEarned(4,spectatedDish.name)? 'url(../../../assets/nowe-logo-nba-75.png)':'url(../../../assets/nowe-logo-nba-75-greyscale.png)'}"
+        ></div>
+        <div class="avgRatingStar" id="{{spectatedDish.name}}avgStar5"
+             [ngStyle]="{backgroundImage: ifStarEarned(5,spectatedDish.name)? 'url(../../../assets/nowe-logo-nba-75.png)':'url(../../../assets/nowe-logo-nba-75-greyscale.png)'}"
+        ></div>
+        <div class="avgRatingStar" id="{{spectatedDish.name}}avgStar6"
+             [ngStyle]="{backgroundImage: ifStarEarned(6,spectatedDish.name)? 'url(../../../assets/nowe-logo-nba-75.png)':'url(../../../assets/nowe-logo-nba-75-greyscale.png)'}"
+        ></div>
+      </div>
+      <p>No. of ratings: {{dishes[spectatedDishInd].ratings.timesRated}}</p>
+      <button type="button" id="rateButton"
+              name="{{dishes[spectatedDishInd].name}}"
+              [hidden]="canRate() || ratingHidden"
+              (click)="onMoveToRatingTEST($event)"
+      >RATE</button>
+      <div class="activeRating" [hidden]="!dishes[spectatedDishInd].ratings.toRate || ratingHidden">
+        <button type="button" class="ratingStar" id="{{spectatedDish.name}}star1" name="{{spectatedDish.name}}"
+                (mouseover)="onHoverChange(1, true, $event)"
+                (mouseleave)="onHoverChange(1, false, $event)"
+                (click)="onRatingTEST($event, 1)"
+        ></button>
+        <button type="button" class="ratingStar" id="{{spectatedDish.name}}star2" name="{{spectatedDish.name}}"
+                (mouseover)="onHoverChange(2, true, $event)"
+                (mouseleave)="onHoverChange(2, false, $event)"
+                (click)="onRatingTEST($event, 2)"
+        ></button>
+        <button type="button" class="ratingStar" id="{{spectatedDish.name}}star3" name="{{spectatedDish.name}}"
+                (mouseenter)="onHoverChange(3, true, $event)"
+                (mouseleave)="onHoverChange(3, false, $event)"
+                (click)="onRatingTEST($event, 3)"
+        ></button>
+        <button type="button" class="ratingStar" id="{{spectatedDish.name}}star4" name="{{spectatedDish.name}}"
+                (mouseenter)="onHoverChange(4, true, $event)"
+                (mouseleave)="onHoverChange(4, false, $event)"
+                (click)="onRatingTEST($event, 4)"
+        ></button>
+        <button type="button" class="ratingStar" id="{{spectatedDish.name}}star5" name="{{spectatedDish.name}}"
+                (mouseenter)="onHoverChange(5, true, $event)"
+                (mouseleave)="onHoverChange(5, false, $event)"
+                (click)="onRatingTEST($event, 5)"
+        ></button>
+        <button type="button" class="ratingStar" id="{{spectatedDish.name}}star6" name="{{spectatedDish.name}}"
+                (mouseover)="onHoverChange(6, true, $event)"
+                (mouseleave)="onHoverChange(6, false, $event)"
+                (click)="onRatingTEST($event, 6)"
+        ></button>
+      </div>
+      <div class="reviews" *ngIf="checkForReviewsTEST(spectatedDish.name); else noReviews">
+        <p>Reviews:</p>
+        <div class="singleReview" *ngFor="let review of spectatedDish.reviews">
+          <ul>
+            <li>Nickname: {{review.nickname}}</li>
+            <li>Review Name: {{review.reviewName}}</li>
+            <li>Review Text: {{review.reviewText}}</li>
+            <li>Date of order: {{review.dateOfOrder}}</li>
+          </ul>
+        </div>
+      </div>
+      <ng-template #noReviews>
+        <p>No reviews of this dish yet...</p>
+      </ng-template>
+
+      <app-new-review *ngIf="!canReview()" [dish]="spectatedDish"
+      ></app-new-review>
+
+      <button type="button" class="returnBtn"
+              routerLink="/dishList" routerLinkActive="active"
+      >RETURN TO MENU</button>
+    </div>
+  </div>
+</div>

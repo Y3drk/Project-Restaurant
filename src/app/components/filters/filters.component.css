@@ -1,0 +1,78 @@
+button {
+  width: 8vw;
+  height: auto;
+
+  margin: 5%;
+  padding: 10%;
+
+  text-align: center;
+  font-size: 1vw;
+  font-weight: bolder;
+
+  border-radius: 3vw;
+  border: none;
+
+  background-color: #0034FC;
+  color: white;
+}
+
+button:hover{
+  box-shadow: 0.15rem 0.15rem 0.15rem black;
+}
+
+.filterChoiceButton{
+  background-color: orange;
+  color: black;
+
+  font-size: 0.75vw;
+
+  margin: 5px;
+  padding: 5px;
+}
+
+.filterRatingButton{
+  background-color: white;
+  color: black;
+
+  font-size: 0.5vw;
+  width: 4vw;
+
+  margin: 5px;
+  padding: 3%;
+}
+
+.filterImg{
+  width: 50%;
+  height: auto;
+}
+
+ng5-slider{
+  width: 20vw;
+}
+
+.insideChoices {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: center;
+}
+
+.allFilters{
+  width: 30vw;
+  height: 50vh;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap:5%;
+  justify-content: center;
+  align-items: center;
+}
+
+ng5-slider {
+  width: 15vw;
+  height: 8vh;
+  background-color: white;
+  box-shadow: 0.15rem 0.15rem 0.15rem black;
+}

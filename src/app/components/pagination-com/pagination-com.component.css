@@ -1,0 +1,44 @@
+nav {
+
+  display : flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: space-evenly;
+
+  background-color: white;
+
+  padding: 1%;
+  padding-right: 9%;
+  margin: 20px;
+
+  box-shadow: 0.5rem 0.5rem 0.5rem black;;
+}
+
+.pagination, .allowedQuantities {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1%;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageBtn, .quantityBtn {
+  background-color: white;
+  color: black;
+  font-weight: bolder;
+
+  border: 0.2vw solid black;
+  border-radius: 15%;
+
+  transition: all 0.4s ease-in;
+}
+
+.pageBtn:hover {
+  color: #0034FC;
+}
+
+.quantityBtn:hover {
+  color: #E30700;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+<div class="basket">
+  <button type="button" id="showBasket" (click)="changeBasketDisplay()">🛒</button>
+</div>
+<div class="wrapper" *ngIf="showBasket">
+<div id="basket" *ngFor="let chosen of getChosenDishes()">
+  <div class="cDish" *ngIf="chosen.amount > 0">
+    <p>Dish:{{chosen.name | uppercase}}</p>
+    <p>Amount:{{chosen.amount}}</p>
+    <p>Cost:{{getTotalCost(chosen.name)}}{{getCurrentCurrency()}}</p>
+  </div>
+</div>
+  <h3>Total Order Cost: {{getWholeOrderCost()}}{{getCurrentCurrency()}}</h3>
+  <button type="button" class="buyBtn" [hidden]="!getLogInfo() || isBasketEmpty()"
+ (click)="onBuy()"
+  >ORDER DISHES!</button>
+</div>
+</div>

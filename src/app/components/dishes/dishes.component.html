@@ -1,0 +1,51 @@
+<div class="DishList" *ngFor="let dish of applyFilters(); let i = index">
+  <div class="dish" [ngStyle]="{border: getPriceInfo(dish.name)}">
+    <button type="button" class="detailedLinkBtn"
+            routerLink="/detailedLook/{{dish.iden}}" routerLinkActive="active">
+    <img class="dishImg"
+         src="{{dish.mainPhotoLink}}"
+         alt="great photo">
+    </button>
+    <div class="descr">
+
+    <h3>{{dish.name | uppercase}}</h3>
+    <ul class="characteristics">
+      <li>cuisine: {{dish.cuisineType | uppercase}}</li>
+
+      <li>category: {{dish.dishCategory}}</li>
+
+      <li *ngIf="getCurrency() === 'USD'">price: {{dish.priceUSD}}$</li>
+
+      <li *ngIf="getCurrency() === 'EUR'">price: {{dish.priceEUR}}€</li>
+
+      <li *ngIf="amounts[getDishInd(dish.name)].amount > 0; else noDish"
+          [ngStyle]="{color: amounts[getDishInd(dish.name)].amount < 6 ? 'red':'black'}"
+          >in Stock: {{amounts[getDishInd(dish.name)].amount}}</li>
+      <ng-template #noDish>
+        <li [ngStyle]="{color: 'red'}">Product is unavailable!</li>
+      </ng-template>
+    </ul>
+    <div class="buttons">
+    <button type="button" class="plus"
+            [hidden]="amounts[getDishInd(dish.name)].amount === 0 || !getLogInfo()"
+            id="{{dish.name}}" (click)="reduceStockAddtoChosen($event)"
+            >+</button>
+
+    <button type="button" class="minus"
+            [hidden]="amounts[getDishInd(dish.name)].amount === originalAmounts[getDishInd(dish.name)].ogAmount || !getLogInfo()"
+            id="{{dish.iden}}" (click)="increaseStockDeletefromChosen($event)"
+            >-</button>
+    </div>
+
+    <div id="avgRatingDiv">Rating:
+      <div class="avgRatingStar" id="{{dish.name}}avgStar1"></div>
+      <div class="avgRatingStar" id="{{dish.name}}avgStar2"></div>
+      <div class="avgRatingStar" id="{{dish.name}}avgStar3"></div>
+      <div class="avgRatingStar" id="{{dish.name}}avgStar4"></div>
+      <div class="avgRatingStar" id="{{dish.name}}avgStar5"></div>
+      <div class="avgRatingStar" id="{{dish.name}}avgStar6"></div>
+      </div>
+  </div>
+  </div>
+</div>
+

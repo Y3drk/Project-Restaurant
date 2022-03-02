@@ -1,0 +1,22 @@
+<div id="all">
+<div class="filters">
+  <button type="button" id="showFilters" (click)="changeFiltersDisplay()">SHOW FILTERS</button>
+  <app-filters *ngIf="showFilters"></app-filters>
+</div>
+<div id="choice">
+  <p>Choose Currency: </p>
+  <button type="button" id="USD"
+          [ngStyle]="{backgroundColor: getCurrentCurrency() === '$' ? 'gold': 'white'}"
+          (click)="chooseCurrency($event)"
+  >USD</button>
+
+  <button type="button" id="EUR"
+          [ngStyle]="{backgroundColor: getCurrentCurrency() != '$' ? 'gold': 'white'}"
+          (click)="chooseCurrency($event)"
+  >EUR</button>
+</div>
+<h4 [ngStyle]="{backgroundColor: getAmount()  >= 10 ? 'dodgerblue':'orange'}"
+>Selected - {{getAmount()}} dishes, worth: {{getTotalCost()}}{{getCurrentCurrency()}}</h4>
+<app-dishes></app-dishes>
+<app-pagination-com></app-pagination-com>
+</div>

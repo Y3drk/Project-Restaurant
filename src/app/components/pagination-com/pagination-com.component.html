@@ -1,0 +1,43 @@
+<nav>
+  <ul class="pagination">
+    <li><button type="button" class="pageBtn"
+                [disabled]="pagination.checkIfFirst()"
+                [ngStyle]="{backgroundColor: pagination.checkIfFirst() ? 'gray' : 'white' }"
+                (click)="pagination.onFirst()">First</button></li>
+    <li><button type="button" class="pageBtn"
+                [disabled]="pagination.checkIfFirst()"
+                [ngStyle]="{backgroundColor: pagination.checkIfFirst() ? 'gray' : 'white'}"
+                (click)="pagination.onPrevious()">Previous</button></li>
+    <li><input
+      #pagination="pagination"
+      appPagination
+      (onChangeEventEmitter)="onPageChange($event)"
+      [totalPages]="pagination.getNoOfPages()"
+      type="number"
+      min="1"  value="{{pagServ.pageNo}}"
+    ></li>
+    <li><button type="button" class="pageBtn"
+                [disabled]="pagination.checkIfLast()"
+                [ngStyle]="{backgroundColor: pagination.checkIfLast() ? 'gray' : 'white' }"
+                (click)="pagination.onNext()">Next</button></li>
+    <li><button type="button" class="pageBtn"
+                [disabled]="pagination.checkIfLast()"
+                [ngStyle]="{backgroundColor: pagination.checkIfLast() ? 'gray' : 'white' }"
+                (click)="pagination.onLast()">Last</button></li>
+  </ul>
+  <ul class="allowedQuantities">
+    <li><p>Dishes on one page:</p></li>
+    <li><button type="button" class="quantityBtn"
+                [ngStyle]="{backgroundColor: pagServ.elementsOnPage === 4 ? 'gold':'white'}"
+                (click)="onQuantityChange(4)">4</button></li>
+    <li><button type="button" class="quantityBtn"
+                [ngStyle]="{backgroundColor: pagServ.elementsOnPage === 8 ? 'gold':'white'}"
+                (click)="onQuantityChange(8)">8</button></li>
+    <li><button type="button" class="quantityBtn"
+                [ngStyle]="{backgroundColor: pagServ.elementsOnPage === 16 ? 'gold':'white'}"
+                (click)="onQuantityChange(16)">16</button></li>
+    <li><button type="button" class="quantityBtn"
+                [ngStyle]="{backgroundColor: pagServ.elementsOnPage === 32 ? 'gold':'white'}"
+                (click)="onQuantityChange(32)">32</button></li>
+  </ul>
+</nav>

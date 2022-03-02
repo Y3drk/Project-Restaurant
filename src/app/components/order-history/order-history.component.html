@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <div class="orderedDish" *ngFor="let dish of orderedDishes">
+    <p id="name">NAME: {{dish.name | uppercase}}</p>
+    <p id="amount">AMOUNT EVER ORDERED: {{dish.amount}}</p>
+    <p id="ifRated">IF RATED: {{dish.ifRated}}</p>
+    <p id="ifReviewed">IF REVIEWED: {{dish.ifReviewed}}</p>
+  </div>
+  <button type="button" class="returnBtn"
+          routerLink="/dishList" routerLinkActive="active"
+  >RETURN TO MENU</button>
+</div>

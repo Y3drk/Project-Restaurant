@@ -1,0 +1,51 @@
+<div class="allFilters">
+  <div id="typeFilter">
+    <button type="button" (click)="showFilters(0, cuisineType, 'cuisineType')">TYPE</button>
+    <div class="insideChoices">
+      <li *ngFor="let type of cuisineType;let i = index" [hidden]="!ifShow[0]">
+        <button name="type" id="{{type}}" class="filterChoiceButton"
+                [ngStyle]="{backgroundColor: ifChosen(type,this.ifChosenType) ? 'lime' : 'gold'}"
+                (click)="onClickFilter($event, this.ifChosenType)"
+                type="button"
+        >{{type}}</button>
+      </li>
+    </div>
+  </div>
+  <div id="categoryFilter">
+    <button type="button" (click)="showFilters(1,dishCategory,'dishCategory')">CATEGORY</button>
+    <div class="insideChoices">
+      <li *ngFor="let category of dishCategory;let i = index" [hidden]="!ifShow[1]">
+        <button name="category" id="{{category}}" class="filterChoiceButton"
+                type="button"
+                [ngStyle]="{backgroundColor: ifChosen(category,this.ifChosenCategory) ? 'lime' : 'gold'}"
+                (click)="onClickFilter($event, this.ifChosenCategory)"
+        >{{category}}</button>
+      </li>
+  </div>
+  </div>
+  <div id="ratingFilter">
+    <button type="button" (click)="showFilters(2, null, null)">RATING</button>
+    <div class="insideChoices">
+      <li *ngFor="let rating of ratings; let i = index" [hidden]="!ifShow[2]">
+        <button name="rating" id="{{rating}}" class="filterRatingButton"
+                type="button"
+                [ngStyle]="{border: ifChosen(rating,this.ifChosenRating) ? '0.5vw solid gold' : 'none'}"
+                (click)="onClickFilter($event, this.ifChosenRating)"
+        >{{rating}}x<img class="filterImg" src="../../../assets/nowe-logo-nba-75.png" alt="logo"></button>
+      </li>
+    </div>
+  </div>
+  <div
+       id="priceUSDFilter">
+    <button type="button" (click)="showFilters(3, null, null)">PRICE $</button>
+        <ng5-slider *ngIf="ifShow[3]" [(value)]="this.filters.chosenForUSD[0]" [(highValue)]="this.filters.chosenForUSD[1]"
+                    [options]="filters.optionsUSD"
+        ></ng5-slider>
+  </div>
+  <div id="priceEURFilter">
+    <button type="button" (click)="showFilters(4, null, null)">PRICE €</button>
+    <ng5-slider *ngIf="ifShow[4]" [(value)]="this.filters.chosenForEUR[0]" [(highValue)]="this.filters.chosenForEUR[1]"
+                [options]="filters.optionsEUR"
+    ></ng5-slider>
+  </div>
+</div>

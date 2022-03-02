@@ -1,0 +1,71 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-evenly;
+}
+
+.wrapper{
+  gap: 40px;
+  align-items: center;
+}
+
+.orderedDish {
+  padding: 5%;
+  gap: 10px;
+
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 50%;
+
+
+  background-color: white;
+  box-shadow: 0.3rem 0.3rem 0.3rem black;
+}
+
+p {
+  font-weight: bolder;
+  font-size: 1.25vw;
+}
+
+#name {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+#amount {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+#ifRated {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+#ifReviewed {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+
+
+.returnBtn {
+  width: 20vw;
+  height: 8vh;
+
+  margin: 3%;
+  padding: 1%;
+
+  font-size: 1.75vw;
+  font-weight: bolder;
+
+  border: 0.3vw solid black;
+  border-radius: 3vw;
+
+  background-color: orange;
+}
+
+.returnBtn:hover {
+  box-shadow: 0.15rem 0.15rem 0.15rem black;
+}

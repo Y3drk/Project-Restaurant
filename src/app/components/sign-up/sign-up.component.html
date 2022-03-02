@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <h3>To sign-up, enter all the necessary data:</h3>
+  <form [formGroup]="addingForm">
+    <div class="inputField">
+    <label>email:</label>
+    <input name="email" type="email" formControlName="email">
+    </div>
+
+    <div class="inputField">
+    <label>password:</label>
+    <input name="password" type="password" formControlName="password">
+    </div>
+
+    <div class="inputField">
+    <label>nickname:</label>
+    <input name="nickname" formControlName="nickname">
+    </div>
+
+    <button type="submit" class="signUpBtn"
+            routerLink="/home" routerLinkActive="active"
+            [ngStyle]="{backgroundColor: !addingForm.valid ? 'grey':'rebeccapurple'}"
+            [disabled]="!addingForm.valid"
+            (click)="onSignUp(addingForm)">Sign-Up!</button>
+  </form>
+  <div class="errorMessages">
+    <p *ngIf="formErrors.email">{{formErrors.email}}</p>
+    <p *ngIf="formErrors.password">{{formErrors.password}}</p>
+  </div>
+</div>

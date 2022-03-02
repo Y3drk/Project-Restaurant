@@ -1,0 +1,34 @@
+<div class="outerCover">
+<div class="wrapper">
+<div class="DishList" *ngFor="let dish of this.dishes; let i = index">
+
+  <div class="dish">
+    <h3>{{dish.name | uppercase}}</h3>
+    <ul class="characteristics">
+      <li>price USD: {{dish.priceUSD}}$</li>
+
+      <li>price EUR: {{dish.priceEUR}}€</li>
+
+      <li *ngIf="amounts[getDishInd(dish.name)].amount > 0; else noDish"
+          [ngStyle]="{color: amounts[getDishInd(dish.name)].amount < 6 ? 'red':'black'}"
+      >in Stock: {{amounts[getDishInd(dish.name)].amount}}</li>
+      <ng-template #noDish>
+        <li [ngStyle]="{color: 'red'}">Product is unavailable!</li>
+      </ng-template>
+    </ul>
+    <div class="buttons">
+    <button type="button" name="{{dish.name}}" class="deleteButton"
+            (click)="deleteTheDish($event)"
+    >DELETE</button>
+    <button type="button" class="editBtn"
+            routerLink="/editDish/{{dish.iden}}" routerLinkActive="active"
+    >EDIT</button>
+    </div>
+  </div>
+
+</div>
+  <button type="button" class="newDishBtn"
+          routerLink="/newDishForm" routerLinkActive="active"
+  >ADD NEW DISH</button>
+</div>
+</div>

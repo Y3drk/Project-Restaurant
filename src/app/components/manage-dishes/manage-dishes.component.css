@@ -1,0 +1,81 @@
+.newDishBtn {
+  margin: 1%;
+  padding: 2%;
+  font-size: 1.75vw;
+  font-weight: bolder;
+
+  border-radius: 3vw;
+  border: none;
+
+  background-color: #0034FC;
+  color: white;
+}
+
+.newDishBtn:hover {
+  box-shadow: 0.15rem 0.15rem 0.15rem black;
+}
+
+.deleteButton {
+  margin: 3%;
+  padding: 3%;
+
+  font-size: 1vw;
+  font-weight: bolder;
+
+  border: 0.1vw solid black;
+  border-radius: 3vw;
+
+  background-color: orange;
+}
+
+.editBtn {
+  margin: 3%;
+  padding: 3%;
+
+  font-size: 1vw;
+  font-weight: bolder;
+
+  border: 0.1vw solid black;
+  border-radius: 3vw;
+
+  background-color: lime;
+}
+
+.wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dish {
+  width: 20rem;
+  height: 8rem;
+  padding: 2%;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3%;
+
+  box-shadow: 0.3rem 0.3rem 0.3rem black;
+}
+
+li {
+  margin: 5px;
+}
+
+.outerCover {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+}

@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div class="mainLog">
+  <h3>Log-In:</h3>
+  <form [formGroup]="addingForm">
+    <label>email:</label>
+    <input name="email" type="email" formControlName="email">
+
+    <label>password:</label>
+    <input name="password" type="password" formControlName="password">
+    <button type="submit" class="logInBtn"
+            routerLink="/home" routerLinkActive="active"
+            [ngStyle]="{backgroundColor: !addingForm.valid ? 'grey':'rebeccapurple'}"
+            [disabled]="!addingForm.valid"
+            (click)="onLogIn(addingForm)">Log-In!</button>
+  </form>
+  </div>
+  <div class="errorMessages">
+    <p *ngIf="formErrors.email">{{formErrors.email}}</p>
+    <p *ngIf="formErrors.password">{{formErrors.password}}</p>
+    </div>
+</div>

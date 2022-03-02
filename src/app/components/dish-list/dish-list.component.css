@@ -1,0 +1,87 @@
+#showFilters {
+  width: 80%;
+  height: auto;
+
+  margin: 1%;
+  padding: 3%;
+
+  font-size: 1vw;
+  font-weight: bolder;
+
+  border: none;
+  border-radius: 3vw;
+
+  background-color: #0034FC;
+  color: white;
+}
+
+#showFilters:hover {
+  box-shadow: 0.15rem 0.15rem 0.15rem black;
+}
+
+app-filters {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+}
+
+#all {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1%;
+  align-items: center;
+  align-content: space-between;
+}
+
+#choice {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1%;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: white;
+  padding: 1%;
+  margin: 15px;
+
+  box-shadow: 0.5rem 0.5rem 0.5rem black;
+}
+
+h4 {
+  width: 20%;
+  height: 20%;
+  border-radius: 3vw;
+
+  text-align: center;
+
+  padding: 1%;
+
+  font-size: 1vw;
+}
+
+
+app-dishes{
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2%;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+#EUR, #USD {
+  padding: 2%;
+  margin: 0;
+
+  font-size: 1vw;
+  font-weight: bolder;
+
+  border: 0.2vw solid black;
+}
+

@@ -1,6 +1,7 @@
 # ProjectRestaurant
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+I also used Google Firestore as an elementary database.
 
 ## Development server
 
